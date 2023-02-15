@@ -1,0 +1,91 @@
+:root {
+  --background: #0E011B;
+  --dark-pink: rgba(104, 0, 52, 0.5);
+  --pink: #F50052;
+  --light-pink: #FF98BA;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  color: white;
+  font-family: monospace;
+}
+
+.popup {
+  border-radius: 25px;
+  background-color: var(--dark-pink);
+  filter: drop-shadow(0 0 90px var(--pink));
+  position: fixed;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  width: 650px;
+  height: 350px;
+  transform: scale(0);
+  transition: 2s ease all;
+  text-align: center;
+  font-size: 12pt;
+}
+.popup .centered-list li {
+  text-align: left;
+  margin-left: 10%;
+}
+.popup h1 {
+  font-style: italic;
+  font-size: 30pt;
+  padding: 0;
+  margin: 0;
+}
+
+.heart {
+  fill: transparent;
+  stroke: var(--pink);
+  stroke-width: 20;
+  display: flex;
+  cursor: pointer;
+  position: fixed;
+}
+.heart path {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1550;
+  transform-origin: center;
+}
+.heart svg {
+  overflow: visible;
+  width: 10rem;
+  filter: drop-shadow(0 0 90px var(--light-pink));
+}
+.heart .heart-outline:hover path {
+  animation: stroke-animation 2s ease-in-out forwards;
+}
+.heart .heart-outline:active {
+  transform: translateY(4px);
+}
+
+@keyframes stroke-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  30% {
+    stroke-dashoffset: 1550;
+  }
+  60% {
+    stroke-dashoffset: 3100;
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: var(--pink);
+    transform: scale(1.08);
+  }
+  100% {
+    stroke-dashoffset: 3100;
+    fill: var(--pink);
+    transform: scale(1.08);
+  }
+}/*# sourceMappingURL=love.css.map */
